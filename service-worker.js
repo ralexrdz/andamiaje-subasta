@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/andamiaje-subasta/precache-manifest.9f08c99abb9db7ff405897777c8d7057.js"
+  "/andamiaje-subasta/precache-manifest.aad8d3cd7066362fa05fdaec770e7d33.js"
 );
 
 workbox.clientsClaim();
