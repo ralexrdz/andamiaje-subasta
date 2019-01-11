@@ -20,7 +20,7 @@ class Auction extends Component {
       showAuction: true,
       me: name
     })
-    axios.post('http://localhost:4000/participants', {
+    axios.post('https://pusher-node-server--ralexrdz.repl.co/participants', {
       participant: name
     }).then((data) => {
       console.log('participant posted')
@@ -32,7 +32,7 @@ class Auction extends Component {
       showAuction: false,
       me: null
     })
-    axios.delete(`http://localhost:4000/participants/${me}`)
+    axios.delete(`https://pusher-node-server--ralexrdz.repl.co/participants/${me}`)
     .then((data) => {
       console.log('bye')
     })

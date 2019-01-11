@@ -16,14 +16,14 @@ class Activity extends Component {
       
     var channel = pusher.subscribe('my-channel');
     channel.bind('new-transaction', function(data) {
-      console.log('pusher new-transaction',data)
+      console.log('pusher new-transaction', data)
       let list = document.getElementById(data.lotId)
       list.innerHTML += `<div>${data.participant} is pushing</div>`
     });
   }
   pushTransaction () {
     console.log(this.props.lot)
-    Axios.post('http://localhost:4000/transactions', {
+    Axios.post('https://pusher-node-server--ralexrdz.repl.co/transactions', {
       participant: this.props.me,
       lot: this.props.lot.id
     }).then(data => {

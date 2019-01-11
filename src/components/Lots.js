@@ -23,7 +23,7 @@ class Activity extends Component {
       let list = document.getElementById('lots')
       list.innerHTML += `<div>${data.participant} - ${data.amount}</div>`
     });
-    Axios.get('http://localhost:4000/lots')
+    Axios.get('https://pusher-node-server--ralexrdz.repl.co/lots')
       .then(this.setLots.bind(this))
   }
   setLots (res) {
