@@ -7,7 +7,7 @@ import './Participants.css';
 class Participants extends Component {
   constructor (props) {
     super(props)
-
+    //
     var pusher = new Pusher('a8ee0fa5cc66b88f3a48', {
       cluster: 'us2',
       forceTLS: true
@@ -31,7 +31,7 @@ class Participants extends Component {
   render() {
     return (
       <div id="box">
-        <h1>Participantes </h1>
+        <h3>Participantes </h3>
         <div id="participants"></div>
       </div>
     )

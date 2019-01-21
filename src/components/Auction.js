@@ -10,8 +10,7 @@ class Auction extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showAuction: false,
-      highestBid: 0
+      showAuction: false
     };
   }
   joinAuction () {
@@ -20,7 +19,7 @@ class Auction extends Component {
       showAuction: true,
       me: name
     })
-    axios.post('https://pusher-node-server--ralexrdz.repl.co/participants', {
+    axios.post('http://localhost:4000/participants', {
       participant: name
     }).then((data) => {
       console.log('participant posted')
@@ -32,7 +31,7 @@ class Auction extends Component {
       showAuction: false,
       me: null
     })
-    axios.delete(`https://pusher-node-server--ralexrdz.repl.co/participants/${me}`)
+    axios.delete(`http://localhost:4000/participants/${me}`)
     .then((data) => {
       console.log('bye')
     })
@@ -40,8 +39,6 @@ class Auction extends Component {
   render() {
     return (
       <div id="box">
-        <h2 id="winner"> </h2>
-        <h1>Auctionsss</h1>
         <Participants/>
         { this.state.showAuction ?
           (
