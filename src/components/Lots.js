@@ -14,11 +14,11 @@ class Activity extends Component {
       lots: []
     }
     //
-    var pusher = new Pusher('a8ee0fa5cc66b88f3a48', {
+    const pusher = new Pusher('a8ee0fa5cc66b88f3a48', {
       cluster: 'us2',
       forceTLS: true
     });
-    var channel = pusher.subscribe('my-channel');
+    const channel = pusher.subscribe('my-channel');
     channel.bind('new-transaction', function(data) {
       console.log(data)
       let list = document.getElementById('lots')

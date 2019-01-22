@@ -8,12 +8,12 @@ class Participants extends Component {
   constructor (props) {
     super(props)
     //
-    var pusher = new Pusher('a8ee0fa5cc66b88f3a48', {
+    const pusher = new Pusher('a8ee0fa5cc66b88f3a48', {
       cluster: 'us2',
       forceTLS: true
     });
       
-    var channel = pusher.subscribe('my-channel');
+    const channel = pusher.subscribe('my-channel');
     channel.bind('participants-updated', function(data) {
       console.log('participants', data)
       let list = document.getElementById('participants')
